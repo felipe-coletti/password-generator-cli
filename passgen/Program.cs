@@ -39,10 +39,12 @@ class Program
         bool useSymbols = args.Contains("--symbols");
 
         int countIndex = Array.IndexOf(args, "--count");
+        
         if (countIndex >= 0 && countIndex + 1 < args.Length)
             int.TryParse(args[countIndex + 1], out count);
 
         int lengthIndex = Array.IndexOf(args, "--length");
+
         if (lengthIndex >= 0 && lengthIndex + 1 < args.Length)
             int.TryParse(args[lengthIndex + 1], out length);
 
