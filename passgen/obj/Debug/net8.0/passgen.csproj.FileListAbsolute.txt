@@ -1,0 +1,15 @@
+/workspaces/password-generator-cli/passgen/bin/Debug/net8.0/passgen
+/workspaces/password-generator-cli/passgen/bin/Debug/net8.0/passgen.deps.json
+/workspaces/password-generator-cli/passgen/bin/Debug/net8.0/passgen.runtimeconfig.json
+/workspaces/password-generator-cli/passgen/bin/Debug/net8.0/passgen.dll
+/workspaces/password-generator-cli/passgen/bin/Debug/net8.0/passgen.pdb
+/workspaces/password-generator-cli/passgen/obj/Debug/net8.0/passgen.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/password-generator-cli/passgen/obj/Debug/net8.0/passgen.AssemblyInfoInputs.cache
+/workspaces/password-generator-cli/passgen/obj/Debug/net8.0/passgen.AssemblyInfo.cs
+/workspaces/password-generator-cli/passgen/obj/Debug/net8.0/passgen.csproj.CoreCompileInputs.cache
+/workspaces/password-generator-cli/passgen/obj/Debug/net8.0/passgen.sourcelink.json
+/workspaces/password-generator-cli/passgen/obj/Debug/net8.0/passgen.dll
+/workspaces/password-generator-cli/passgen/obj/Debug/net8.0/refint/passgen.dll
+/workspaces/password-generator-cli/passgen/obj/Debug/net8.0/passgen.pdb
+/workspaces/password-generator-cli/passgen/obj/Debug/net8.0/passgen.genruntimeconfig.cache
+/workspaces/password-generator-cli/passgen/obj/Debug/net8.0/ref/passgen.dll
