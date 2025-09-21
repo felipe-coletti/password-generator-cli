@@ -6,7 +6,7 @@ class Program
 
     static Program()
     {
-        commands.Add(new Command("generate", "Generate random passwords", GenerateCommand.Execute, GenerateCommand.PrintHelp));
+        commands.Add(new Command("generate", "Generate random passwords", GenerateCommand.Execute, GenerateCommand.PrintHelp, ["gen"]));
         commands.Add(new Command("help", "Show this help message", static args => HelpCommand.Execute(args, commands)));
     }
     static void Main()
@@ -25,8 +25,8 @@ class Program
 
                 if (parts.Length > 1 && parts[0] == "passgen")
                 {
-                    string cmdName = parts[1].ToLower();
-                    var cmd = commands.FirstOrDefault(c => c.Name == cmdName);
+                    string cmdName = parts[1];
+                    var cmd = commands.FirstOrDefault(c => c.Name == cmdName || (c.Aliases != null && c.Aliases.Contains(cmdName)));
 
                     if (cmd != null)
                         cmd.Execute(parts);

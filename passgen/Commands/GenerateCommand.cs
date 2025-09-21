@@ -9,16 +9,17 @@ public static class GenerateCommand
         Console.WriteLine("Generate random passwords.");
         Console.WriteLine();
         Console.WriteLine("Options:");
-        Console.WriteLine("  --count <num>       Number of passwords (default: 1)");
-        Console.WriteLine("  --length <num>      Length of each password (default: 15)");
-        Console.WriteLine("  --uppercase         Include uppercase letters");
-        Console.WriteLine("  --lowercase         Include lowercase letters");
-        Console.WriteLine("  --numbers           Include numbers");
-        Console.WriteLine("  --symbols           Include special symbols");
+        Console.WriteLine("  --count, -C <num>       Number of passwords (default: 1)");
+        Console.WriteLine("  --length, -L <num>      Length of each password (default: 15)");
+        Console.WriteLine("  --uppercase, -u         Include uppercase letters");
+        Console.WriteLine("  --lowercase, -l         Include lowercase letters");
+        Console.WriteLine("  --numbers, -n           Include numbers");
+        Console.WriteLine("  --symbols, -s           Include special symbols");
         Console.WriteLine();
         Console.WriteLine("Examples:");
         Console.WriteLine(" passgen generate    # 1 password, 15 chars, all character types");
         Console.WriteLine(" passgen generate --count 5 --length 15 --uppercase --lowercase --numbers --symbols");
+        Console.WriteLine(" passgen gen -C 5 -L 15 -u -l -n -s");
     }
 
     private static string GeneratePassword(int length, bool useUpper, bool useLower, bool useNumbers, bool useSymbols)
@@ -43,18 +44,20 @@ public static class GenerateCommand
         int count = 1;
         int length = 15;
 
-        bool useUpper = args.Contains("--uppercase");
-        bool useLower = args.Contains("--lowercase");
-        bool useNumbers = args.Contains("--numbers");
-        bool useSymbols = args.Contains("--symbols");
+        bool useUpper = args.Contains("--uppercase") || args.Contains("-u");
+        bool useLower = args.Contains("--lowercase") || args.Contains("-l");
+        bool useNumbers = args.Contains("--numbers") || args.Contains("-n");
+        bool useSymbols = args.Contains("--symbols") || args.Contains("-s");
 
         int countIndex = Array.IndexOf(args, "--count");
 
+        if (countIndex == -1) countIndex = Array.IndexOf(args, "-C");
         if (countIndex >= 0 && countIndex + 1 < args.Length)
             _ = int.TryParse(args[countIndex + 1], out count);
 
         int lengthIndex = Array.IndexOf(args, "--length");
 
+        if (lengthIndex == -1) lengthIndex = Array.IndexOf(args, "-L");
         if (lengthIndex >= 0 && lengthIndex + 1 < args.Length)
             _ = int.TryParse(args[lengthIndex + 1], out length);
 

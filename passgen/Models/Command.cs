@@ -4,5 +4,6 @@ public record Command(
     string Name,
     string Description,
     Action<string[]> Execute,
-    Action? PrintHelp = null
+    Action? PrintHelp = null,
+    string[]? Aliases = null
 );
