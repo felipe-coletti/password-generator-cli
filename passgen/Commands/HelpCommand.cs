@@ -9,7 +9,7 @@ public static class HelpCommand
         if (args.Length > 2)
         {
             string cmdName = args[2].ToLower();
-            var cmd = commands.FirstOrDefault(c => c.Name == cmdName);
+            var cmd = commands.FirstOrDefault(c => c.Name == cmdName || (c.Aliases != null && c.Aliases.Contains(cmdName)));
 
             if (cmd != null && cmd.PrintHelp != null)
             {
@@ -22,7 +22,7 @@ public static class HelpCommand
         }
         else
         {
-            Console.WriteLine("Usage: passgen <command> [options]");
+            Console.WriteLine($"Usage: {ProjectInfo.Name} <command> [options]");
             Console.WriteLine();
             Console.WriteLine("Available commands:");
             foreach (var cmd in commands)
@@ -30,7 +30,7 @@ public static class HelpCommand
                 Console.WriteLine($"  {cmd.Name,-10} {cmd.Description}");
             }
             Console.WriteLine();
-            Console.WriteLine("Use 'passgen help <command>' to see detailed options for a command.");
+            Console.WriteLine($"Use '{ProjectInfo.Name} help <command>' to see detailed options for a command.");
         }
     }
 }
