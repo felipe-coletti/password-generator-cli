@@ -10,23 +10,14 @@ class Program
             return;
         }
 
-        if (args[0] != ProjectInfo.Name)
-        {
-            Console.WriteLine($"Invalid syntax. Use '{ProjectInfo.Name} <command>'.");
-            return;
-        }
+        string cmdName = args[0];
+        var cmd = CommandRegistry.Commands.FirstOrDefault(
+            c => c.Name == cmdName || (c.Aliases != null && c.Aliases.Contains(cmdName))
+        );
 
-        if (args.Length > 1)
-        {
-            string cmdName = args[1];
-            var cmd = CommandRegistry.Commands.FirstOrDefault(
-                c => c.Name == cmdName || (c.Aliases != null && c.Aliases.Contains(cmdName))
-            );
-
-            if (cmd != null)
-                cmd.Execute(args);
-            else
-                Console.WriteLine($"Unknown command. Use '{ProjectInfo.Name} help' to list commands.");
-        }
+        if (cmd != null)
+            cmd.Execute(args);
+        else
+            Console.WriteLine($"Unknown command. Use '{ProjectInfo.Name} help' to list commands.");
     }
 }
