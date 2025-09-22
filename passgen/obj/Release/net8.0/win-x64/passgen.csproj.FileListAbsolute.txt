@@ -1,0 +1,15 @@
+/workspaces/password-generator-cli/passgen/bin/Release/net8.0/win-x64/passgen.exe
+/workspaces/password-generator-cli/passgen/bin/Release/net8.0/win-x64/passgen.deps.json
+/workspaces/password-generator-cli/passgen/bin/Release/net8.0/win-x64/passgen.runtimeconfig.json
+/workspaces/password-generator-cli/passgen/bin/Release/net8.0/win-x64/passgen.dll
+/workspaces/password-generator-cli/passgen/bin/Release/net8.0/win-x64/passgen.pdb
+/workspaces/password-generator-cli/passgen/obj/Release/net8.0/win-x64/passgen.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/password-generator-cli/passgen/obj/Release/net8.0/win-x64/passgen.AssemblyInfoInputs.cache
+/workspaces/password-generator-cli/passgen/obj/Release/net8.0/win-x64/passgen.AssemblyInfo.cs
+/workspaces/password-generator-cli/passgen/obj/Release/net8.0/win-x64/passgen.csproj.CoreCompileInputs.cache
+/workspaces/password-generator-cli/passgen/obj/Release/net8.0/win-x64/passgen.sourcelink.json
+/workspaces/password-generator-cli/passgen/obj/Release/net8.0/win-x64/passgen.dll
+/workspaces/password-generator-cli/passgen/obj/Release/net8.0/win-x64/refint/passgen.dll
+/workspaces/password-generator-cli/passgen/obj/Release/net8.0/win-x64/passgen.pdb
+/workspaces/password-generator-cli/passgen/obj/Release/net8.0/win-x64/passgen.genruntimeconfig.cache
+/workspaces/password-generator-cli/passgen/obj/Release/net8.0/win-x64/ref/passgen.dll

@@ -1,37 +1,32 @@
 ﻿using passgen;
+
 class Program
 {
-    static void Main()
+    static void Main(string[] args)
     {
-        while (true)
+        if (args.Length == 0)
         {
-            Console.WriteLine("Enter a command:");
+            Console.WriteLine($"Enter a valid command or use '{ProjectInfo.Name} help'.");
+            return;
+        }
 
-            string? input = Console.ReadLine();
+        if (args[0] != ProjectInfo.Name)
+        {
+            Console.WriteLine($"Invalid syntax. Use '{ProjectInfo.Name} <command>'.");
+            return;
+        }
 
-            if (!string.IsNullOrWhiteSpace(input))
-            {
-                string[] parts = input.Trim().Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        if (args.Length > 1)
+        {
+            string cmdName = args[1];
+            var cmd = CommandRegistry.Commands.FirstOrDefault(
+                c => c.Name == cmdName || (c.Aliases != null && c.Aliases.Contains(cmdName))
+            );
 
-                if (parts.Length > 1 && parts[0] == ProjectInfo.Name)
-                {
-                    string cmdName = parts[1];
-                    var cmd = CommandRegistry.Commands.FirstOrDefault(c => c.Name == cmdName || (c.Aliases != null && c.Aliases.Contains(cmdName)));
-
-                    if (cmd != null)
-                        cmd.Execute(parts);
-                    else
-                        Console.WriteLine($"Unknown command. Use '{ProjectInfo.Name} help' to list commands.");
-                }
-                else
-                {
-                    Console.WriteLine($"Enter a valid command or use '{ProjectInfo.Name} help'.");
-                }
-            }
+            if (cmd != null)
+                cmd.Execute(args);
             else
-            {
-                Console.WriteLine($"Enter a valid command or use '{ProjectInfo.Name} help'.");
-            }
+                Console.WriteLine($"Unknown command. Use '{ProjectInfo.Name} help' to list commands.");
         }
     }
 }

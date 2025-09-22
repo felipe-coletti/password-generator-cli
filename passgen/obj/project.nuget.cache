@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "G7wtHpL3gc4=",
+  "dgSpecHash": "g4t2Dajq7GY=",
   "success": true,
   "projectFilePath": "/workspaces/password-generator-cli/passgen/passgen.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/home/codespace/.nuget/packages/microsoft.netcore.app.host.win-x64/8.0.18/microsoft.netcore.app.host.win-x64.8.0.18.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -1,0 +1,5 @@
+/workspaces/password-generator-cli/passgen/bin/Release/net8.0/win-x64/publish/passgen.exe
+/workspaces/password-generator-cli/passgen/bin/Release/net8.0/win-x64/publish/passgen.dll
+/workspaces/password-generator-cli/passgen/bin/Release/net8.0/win-x64/publish/passgen.deps.json
+/workspaces/password-generator-cli/passgen/bin/Release/net8.0/win-x64/publish/passgen.runtimeconfig.json
+/workspaces/password-generator-cli/passgen/bin/Release/net8.0/win-x64/publish/passgen.pdb
