@@ -1,17 +1,18 @@
 namespace passgen.Commands;
 
 using passgen;
+using passgen.Models;
+using passgen.Utils;
 
 public static class GenerateCommand
 {
-    public static void PrintHelp()
+    public static void PrintHelp(Command cmd)
     {
-        var cmd = CommandRegistry.Commands.FirstOrDefault(c => c.Name == "generate") ?? throw new InvalidOperationException("Generate command not found");
-        var cmdDescription = cmd.Description;
-
-        Console.WriteLine($"Usage: {ProjectInfo.Name} password generate [options]");
+        var usage = CommandTreeHelper.GetFullPath(cmd);
+        
+        Console.WriteLine($"Usage: {ProjectInfo.Name} {usage} [options]");
         Console.WriteLine();
-        Console.WriteLine(cmdDescription);
+        Console.WriteLine(cmd.Description);
         Console.WriteLine();
         Console.WriteLine("Options:");
         Console.WriteLine("  --count, -C <num>       Number of passwords (default: 1)");
@@ -22,9 +23,9 @@ public static class GenerateCommand
         Console.WriteLine("  --symbols, -s           Include special symbols");
         Console.WriteLine();
         Console.WriteLine("Examples:");
-        Console.WriteLine($" {ProjectInfo.Name} password generate    # 1 password, 15 chars, all character types");
-        Console.WriteLine($" {ProjectInfo.Name} password generate --count 5 --length 15 --uppercase --lowercase --numbers --symbols");
-        Console.WriteLine($" {ProjectInfo.Name} password gen -C 5 -L 15 -u -l -n -s");
+        Console.WriteLine($"  {ProjectInfo.Name} {usage}    # 1 password, 15 chars, all character types");
+        Console.WriteLine($"  {ProjectInfo.Name} {usage} --count 5 --length 15 --uppercase --lowercase --numbers --symbols");
+        Console.WriteLine($"  {ProjectInfo.Name} {usage} gen -C 5 -L 15 -u -l -n -s");
     }
 
     private static string GeneratePassword(int length, bool useUpper, bool useLower, bool useNumbers, bool useSymbols)

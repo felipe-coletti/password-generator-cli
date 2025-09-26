@@ -1,18 +1,18 @@
 namespace passgen.Commands;
 
-using passgen;
+using System;
+using passgen.Models;
+using passgen.Utils;
 
 public static class VersionCommand
 {
-    public static void PrintHelp()
+    public static void PrintHelp(Command cmd)
     {
-        var cmd = CommandRegistry.Commands.FirstOrDefault(c => c.Name == "generate") ?? throw new InvalidOperationException("Generate command not found");
-        var cmdDescription = cmd.Description;
+        var usage = CommandTreeHelper.GetFullPath(cmd);
 
-        Console.WriteLine($"Usage: {ProjectInfo.Name} version");
+        Console.WriteLine($"Usage: {ProjectInfo.Name} {usage}");
         Console.WriteLine();
-        Console.WriteLine(cmdDescription);
-
+        Console.WriteLine(cmd.Description ?? "Show the current version of the application");
     }
 
     public static void Execute(string[] args)

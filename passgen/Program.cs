@@ -1,7 +1,4 @@
-﻿using System;
-using System.Linq;
-using System.Collections.Generic;
-using passgen.Models;
+﻿using passgen.Models;
 
 namespace passgen
 {
@@ -12,7 +9,7 @@ namespace passgen
             if (args.Length == 0)
             {
                 Console.WriteLine($"Enter a valid command or use '{ProjectInfo.Name} help'.");
-                
+
                 return;
             }
 

@@ -4,7 +4,7 @@ public record Command(
     string Name,
     string Description,
     Action<string[]>? Execute = null,
-    Action? PrintHelp = null,
+    Action<Command>? PrintHelp = null,
     string[]? Aliases = null,
     List<Command>? Subcommands = null
 );
