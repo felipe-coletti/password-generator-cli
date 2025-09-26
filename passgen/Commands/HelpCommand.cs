@@ -22,12 +22,14 @@ public static class HelpCommand
         }
         else
         {
-            Console.WriteLine($"Usage: {ProjectInfo.Name} <command> [options]");
+            Console.WriteLine($"Usages:");
+            Console.WriteLine($" {ProjectInfo.Name} <command> [options]");
+            Console.WriteLine($" {ProjectInfo.Name} <group> <command> [options]");
             Console.WriteLine();
             Console.WriteLine("Available commands:");
             foreach (var cmd in commands)
             {
-                Console.WriteLine($"  {cmd.Name,-10} {cmd.Description}");
+                Console.WriteLine($" {cmd.Name,-10} {cmd.Description}");
             }
             Console.WriteLine();
             Console.WriteLine($"Use '{ProjectInfo.Name} help <command>' to see detailed options for a command.");

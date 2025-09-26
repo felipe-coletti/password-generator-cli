@@ -9,8 +9,11 @@ public static class CommandRegistry
 
     static CommandRegistry()
     {
-        Commands.Add(new Command("generate", "Generate random passwords", GenerateCommand.Execute, GenerateCommand.PrintHelp, ["gen"]));
         Commands.Add(new Command("help", "Show this help message", static args => HelpCommand.Execute(args, Commands)));
         Commands.Add(new Command("version", "Show the current version of the application", VersionCommand.Execute, VersionCommand.PrintHelp));
+        Commands.Add(new Command("password", "Password-related commands", Subcommands:
+        [
+            new("generate", "Generate random passwords", GenerateCommand.Execute, GenerateCommand.PrintHelp, ["gen"])
+        ]));
     }
 }

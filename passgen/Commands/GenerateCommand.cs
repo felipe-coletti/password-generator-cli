@@ -9,7 +9,7 @@ public static class GenerateCommand
         var cmd = CommandRegistry.Commands.FirstOrDefault(c => c.Name == "generate") ?? throw new InvalidOperationException("Generate command not found");
         var cmdDescription = cmd.Description;
 
-        Console.WriteLine($"Usage: {ProjectInfo.Name} generate [options]");
+        Console.WriteLine($"Usage: {ProjectInfo.Name} password generate [options]");
         Console.WriteLine();
         Console.WriteLine(cmdDescription);
         Console.WriteLine();
@@ -22,9 +22,9 @@ public static class GenerateCommand
         Console.WriteLine("  --symbols, -s           Include special symbols");
         Console.WriteLine();
         Console.WriteLine("Examples:");
-        Console.WriteLine($" {ProjectInfo.Name} generate    # 1 password, 15 chars, all character types");
-        Console.WriteLine($" {ProjectInfo.Name} generate --count 5 --length 15 --uppercase --lowercase --numbers --symbols");
-        Console.WriteLine($" {ProjectInfo.Name} gen -C 5 -L 15 -u -l -n -s");
+        Console.WriteLine($" {ProjectInfo.Name} password generate    # 1 password, 15 chars, all character types");
+        Console.WriteLine($" {ProjectInfo.Name} password generate --count 5 --length 15 --uppercase --lowercase --numbers --symbols");
+        Console.WriteLine($" {ProjectInfo.Name} password gen -C 5 -L 15 -u -l -n -s");
     }
 
     private static string GeneratePassword(int length, bool useUpper, bool useLower, bool useNumbers, bool useSymbols)
