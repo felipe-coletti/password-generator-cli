@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("passgen")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d90b2021e07e498870990b48b8cca5a8f6bb6332")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d5400e69a47f25034752225f08dabc37850668be")]
 [assembly: System.Reflection.AssemblyProductAttribute("passgen")]
 [assembly: System.Reflection.AssemblyTitleAttribute("passgen")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

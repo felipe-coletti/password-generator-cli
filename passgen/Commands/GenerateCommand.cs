@@ -12,6 +12,12 @@ public static class GenerateCommand
         
         Console.WriteLine($"Usage: {ProjectInfo.Name} {usage} [options]");
         Console.WriteLine();
+        Console.WriteLine("Aliases:");
+        for (int i = 0; i < cmd.Aliases.Length; i++)
+        {
+            Console.WriteLine($"  {cmd.Aliases[i]}");
+        }
+        Console.WriteLine();
         Console.WriteLine(cmd.Description);
         Console.WriteLine();
         Console.WriteLine("Options:");
