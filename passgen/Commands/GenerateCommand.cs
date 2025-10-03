@@ -20,12 +20,12 @@ public static class GenerateCommand
         Console.WriteLine("  --uppercase, -u         Include uppercase letters");
         Console.WriteLine("  --lowercase, -l         Include lowercase letters");
         Console.WriteLine("  --numbers, -n           Include numbers");
-        Console.WriteLine("  --symbols, -s           Include special symbols");
+        Console.WriteLine("  --symbols, -s           Include symbols");
         Console.WriteLine();
         Console.WriteLine("Examples:");
         Console.WriteLine($"  {ProjectInfo.Name} {usage}    # 1 password, 15 chars, all character types");
         Console.WriteLine($"  {ProjectInfo.Name} {usage} --count 5 --length 15 --uppercase --lowercase --numbers --symbols");
-        Console.WriteLine($"  {ProjectInfo.Name} {usage} gen -C 5 -L 15 -u -l -n -s");
+        Console.WriteLine($"  {ProjectInfo.Name} {usage} -C 5 -L 15 -u -l -n -s");
     }
 
     private static string GeneratePassword(int length, bool useUpper, bool useLower, bool useNumbers, bool useSymbols)
